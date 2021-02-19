@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body {
+    padding: 20px 70px;
+    background-color: rgb(14, 14, 14);
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    color: #009879;
+}
+
+.form-container {
+    max-width: max-content;
+    padding: 25px 30px;
+    border: 2px solid #009879;
+}
+
+select {
+    padding: 5px 7px;
+    margin: 0 10px;
+}
+
+input {
+    padding: 5px 7px;
+    margin: 0 10px;
+    width: 80px;
+}
+
+#submit {
+    font-family: 'Comfortaa', cursive;
+    font-weight: bolder;
+    margin: 20px 0 30px 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #009879;
+    color: whitesmoke;
+    border: none;
+    border-radius: 2px;
+}
+
+.calc-box {    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.input, .output {
+    width: 150px;
+}
+
+#pixel, #inch {
+    display: inline-block; 
+    text-align: right;
+    width: 140px;
+    padding-right: 5px;
+    margin: 0;
+}
+
+.equal {
+    margin: 0 20px;
+}
+
+#output {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.7em;
+    min-width: 400px;
+    background-color: rgba(245, 245, 245, 0.7);
+    color: black;
+    text-align: center;
+}
+
+thead tr {
+    background-color: #009879;
+    color: whitesmoke;
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
