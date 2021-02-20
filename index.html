@@ -15,11 +15,12 @@
         <form>
             <!-- Page size selection -->
             <label for="pageformat">Page Size: </label>
-            <select name="pageformat" id="pageformat">
+            <select name="pageformat" id="pageformat" onchange="selectFormat()">
               <option value="lg">A3</option>
               <option value="md">A4</option>
               <option value="sm">A5</option>
-            </select><span id="pagesize">( 11.7 x 16.5 Inch )</span>
+            </select>
+            <span id="pagesize">( 11.7 x 16.5 Inch )</span>
             <br><br>
             <!-- Image dimension -->
             <label>Image Size: </label>
@@ -52,17 +53,17 @@
         </thead>
         <tbody>
             <tr>
-                <td>A3</td>
+                <td style="font-weight: bold;">A3</td>
                 <td>297 x 420</td>
                 <td>11.7 x 16.5</td>
             </tr>
             <tr>
-                <td>A4</td>
+                <td style="font-weight: bold;">A4</td>
                 <td>210 x 297</td>
                 <td>8.3 x 11.7</td>
                 </tr>
             <tr>
-                <td>A5</td>
+                <td style="font-weight: bold;">A5</td>
                 <td>148 x 210</td>
                 <td>5.8 x 8.3</td>
             </tr>

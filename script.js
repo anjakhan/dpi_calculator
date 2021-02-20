@@ -1,16 +1,53 @@
-const pgformat = {
-    lg: {
-        width: 11.7,
-        height: 16.5
-    },
-    md: {
-        width: 8.3,
-        height: 11.7
-    },
-    sm: {
-        width: 5.8,
-        height: 8.3
-    }
+const pgformat = [{
+    size: "lg",
+    width: 11.7,
+    height: 16.5
+}, {
+    size: "md",
+    width: 8.3,
+    height: 11.7
+}, {
+    size: "sm",
+    width: 5.8,
+    height: 8.3
+}];
+
+let imgwidth = 3510;
+let imgheight = 4950;
+let pgwidth = 11.7;
+let pgheight = 16.5;
+
+const selectFormat = () => {
+    const format = document.getElementById("pageformat").value;
+    const page = pgformat.filter(item => item.size === format);
+    pgwidth = page[0].width;
+    pgheight = page[0].height;
+    const pagesize = document.getElementById("pagesize");
+    const inch = document.getElementById("inch");
+    pagesize.textContent = `( ${pgwidth} x ${pgheight} Inch )`;
+    inch.textContent = `${pgwidth} (${pgheight}) Inch`;
+};
+
+// const getWidth = () => {
+//     const pixel = document.getElementById("pixel");
+//     imgwidth = document.getElementById("width").value;
+//     pixel.textContent = `${imgwidth > 0 ? imgwidth : 0} (${Math.ceil(imgwidth*1.41)}) Pixel`;
+// }
+
+// const getHeight = () => {
+//     const pixel = document.getElementById("pixel");
+//     imgheight = document.getElementById("height").value;
+//     pixel.textContent = `${Math.floor(imgheight/1.41)} (${imgheight > 0 ? imgheight : 0}) Pixel`;
+// }
+
+const getDPI = (event) => {
+    event.preventDefault();
+    const pixel = document.getElementById("pixel");
+    const output = document.getElementById("output");
+    imgwidth = document.getElementById("width").value;
+    imgheight = document.getElementById("height").value;
+    pixel.textContent = `${imgwidth > 0 ? imgwidth : 0} (${imgheight > 0 ? imgheight : 0}) Pixel`;
+    output.textContent = `${Math.round(imgwidth/pgwidth)} DPI`
 }
 
-console.log(pgformat)
+document.getElementById("submit").addEventListener("click", getDPI);
