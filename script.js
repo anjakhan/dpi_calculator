@@ -46,6 +46,8 @@ const getDPI = (event) => {
     const output = document.getElementById("output");
     imgwidth = document.getElementById("width").value;
     imgheight = document.getElementById("height").value;
+
+    imgwidth > 0 ? imgwidth : imgwidth = Math.floor(imgheight/1.41);
     pixel.textContent = `${imgwidth > 0 ? imgwidth : 0} (${imgheight > 0 ? imgheight : 0}) Pixel`;
     output.textContent = `${Math.round(imgwidth/pgwidth)} DPI`
 }
