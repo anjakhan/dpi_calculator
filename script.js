@@ -17,7 +17,7 @@ let imgheight = 4950;
 let pgwidth = 11.7;
 let pgheight = 16.5;
 
-const selectFormat = () => {
+const getFormat = () => {
     const format = document.getElementById("pageformat").value;
     const page = pgformat.filter(item => item.size === format);
     pgwidth = page[0].width;
@@ -28,20 +28,10 @@ const selectFormat = () => {
     inch.textContent = `${pgwidth} (${pgheight}) Inch`;
 };
 
-// const getWidth = () => {
-//     const pixel = document.getElementById("pixel");
-//     imgwidth = document.getElementById("width").value;
-//     pixel.textContent = `${imgwidth > 0 ? imgwidth : 0} (${Math.ceil(imgwidth*1.41)}) Pixel`;
-// }
-
-// const getHeight = () => {
-//     const pixel = document.getElementById("pixel");
-//     imgheight = document.getElementById("height").value;
-//     pixel.textContent = `${Math.floor(imgheight/1.41)} (${imgheight > 0 ? imgheight : 0}) Pixel`;
-// }
-
 const getDPI = (event) => {
     event.preventDefault();
+    getFormat();
+
     const pixel = document.getElementById("pixel");
     const output = document.getElementById("output");
     imgwidth = document.getElementById("width").value;
