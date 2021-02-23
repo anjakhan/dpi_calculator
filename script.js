@@ -17,14 +17,21 @@ let imgheight = 4950;
 let pgwidth = 11.7;
 let pgheight = 16.5;
 
-const getFormat = () => {
+const selectFormat = () => {
     const format = document.getElementById("pageformat").value;
     const page = pgformat.filter(item => item.size === format);
     pgwidth = page[0].width;
     pgheight = page[0].height;
     const pagesize = document.getElementById("pagesize");
-    const inch = document.getElementById("inch");
     pagesize.textContent = `( ${pgwidth} x ${pgheight} Inch )`;
+}
+
+const getFormat = () => {
+    const format = document.getElementById("pageformat").value;
+    const page = pgformat.filter(item => item.size === format);
+    pgwidth = page[0].width;
+    pgheight = page[0].height;
+    const inch = document.getElementById("inch");
     inch.textContent = `${pgwidth} (${pgheight}) Inch`;
 };
 
